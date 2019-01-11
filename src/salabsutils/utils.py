@@ -18,8 +18,7 @@ class SalabsUtils(DynamicRobotApiClass):
     @keyword
     def split_url_to_host_and_path(self, url):
         data = furl(url)
-        return { 'base': str(data.copy().remove(path=True)), 'path':
-                str(data.path)}
+        return {'base': str(data.copy().remove(path=True)), 'path': str(data.path)}
 
     @keyword
     def cookies_to_dict(self, cookies):
