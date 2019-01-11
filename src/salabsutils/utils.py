@@ -1,6 +1,7 @@
-from .base_class import DynamicRobotApiClass
+from base_class import DynamicRobotApiClass
 from robot.api.deco import keyword
 from furl import furl
+from http.cookies import SimpleCookie
 
 
 class SalabsUtils(DynamicRobotApiClass):
@@ -13,3 +14,18 @@ class SalabsUtils(DynamicRobotApiClass):
         data.username = l
         data.password = p
         return data.tostr()
+
+    @keyword
+    def split_url_to_host_and_path(self, url):
+        data = furl(url)
+        return { 'base': str(data.copy().remove(path=True)), 'path':
+                str(data.path)}
+
+    @keyword
+    def cookies_to_dict(self, cookies):
+        ret = {}
+        cookie = SimpleCookie()
+        cookie.load(cookies)
+        for key, morsel in cookie.keys():
+            ret[key] = morsel.value
+        return ret
