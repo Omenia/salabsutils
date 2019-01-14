@@ -1,3 +1,5 @@
 twine
 python-language-server[all]
 flake8
+
+-r requirements.txt

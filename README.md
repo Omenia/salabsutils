@@ -1,12 +1,12 @@
-robotframework-utils
-====================
+robotframework-salabsutils
+==========================
 
 
-Add a short description here!
+Random oneoff utils used in various project so that there's no need to copypaste stuff around.
 
 
 Description
 ===========
 
-A longer description of your project goes here...
+TBD
 

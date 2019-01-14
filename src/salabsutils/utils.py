@@ -1,4 +1,8 @@
-from base_class import DynamicRobotApiClass
+try:
+    from .base_class import DynamicRobotApiClass
+except:
+    from base_class import DynamicRobotApiClass
+
 from robot.api.deco import keyword
 from furl import furl
 from http.cookies import SimpleCookie
